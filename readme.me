@@ -1,1 +1,7 @@
 
+Initially I employed the Logistic regression analysis for the exoplanet data, as we had a categorical variable for the predicted y variable.  However, the y value took on three different values, including confirmed, candidate, and false positive.  In light of this, we made confirmed and candidate the single value one, and the false positive the value zero.  Perhaps this is cuasing the fact that the scores for both the training and test datasets roughly 0.61, and not higher.  It would likely be higher if candidate was included in the 0 category, rather than the 1.  For classification purposes, logistic regression is a good place to start.
+
+Subsequently, I employed the KNN model for analysis.  This is a tool for classification purposes, when looking at the features.  At the most, there are nine clusters which can confirm whether a cluster of exoplanets falls in the predicted value of candidate/confirmed.  This data was unscaled, as there was no difference really in the final analysis.  The KNN iterations went through 1 to 19, and leveled off, for both the test and training data, in terms of clusters tested to confirm predicted if a planetary body is a good match.  The training score value of 0.69 and the testing value of 0.65 are both significantly better than the logistic regression employed.
+
+In both cases, I used GridSearchCV to fine tune the parameters used in estimating the predictions.  This is primarily used to improve the model, and see how well it performs.
+
